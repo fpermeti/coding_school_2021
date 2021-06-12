@@ -13,9 +13,9 @@ using WindowsFormsApp1.Impl;
 namespace WindowsFormsApp1 {
     public partial class ProfessorForm : DevExpress.XtraEditors.XtraForm {
 
-        public Professor NewProfessor { get; set; }
-        public List<Course> NewCourses { get; set; }
+        public Professor NewProfessor = null;
 
+        public University NewUniversity = null;
 
         public ProfessorForm() {
 
@@ -25,14 +25,13 @@ namespace WindowsFormsApp1 {
         private void ctrlOK_Click(object sender, EventArgs e) {
 
             AddProfessor();
-
         }
 
         private void AddProfessor() {
 
             if (Convert.ToString(ctrlName.EditValue).Length > 0 && Convert.ToString(ctrlSurname.EditValue).Length > 0) {
 
-                NewProfessor.Name = Convert.ToString(ctrlName.EditValue);
+                NewProfessor.Name = string.Format("Dr. {0}", Convert.ToString(ctrlName.EditValue));
 
                 NewProfessor.Surname = Convert.ToString(ctrlSurname.EditValue);
 
@@ -40,15 +39,13 @@ namespace WindowsFormsApp1 {
 
                 NewProfessor.Rank = (ProfessorRank)Enum.Parse(typeof(ProfessorRank), ctrlRank.Text);
 
-                List<Course> newCourses = new List<Course>();
+                NewProfessor.Courses.Clear();
 
                 //populate list containing the courses a professor teaches
                 foreach (int i in ctrlCourses.CheckedIndices) {
 
-                    newCourses.Add(NewCourses[i]);
+                    NewProfessor.Courses.Add(NewUniversity.Courses[i]);
                 }
-
-                NewProfessor.Courses = newCourses;
 
                 DialogResult = DialogResult.OK;
 
@@ -95,6 +92,5 @@ namespace WindowsFormsApp1 {
 
             ctrlRank.Text = ((DXMenuItem)sender).Caption;
         }
-
     }
 }

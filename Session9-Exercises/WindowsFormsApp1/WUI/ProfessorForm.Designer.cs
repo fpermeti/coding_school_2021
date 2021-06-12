@@ -44,7 +44,7 @@ namespace WindowsFormsApp1 {
             // 
             // CtrlProfessorRankLabel
             // 
-            this.CtrlProfessorRankLabel.Location = new System.Drawing.Point(65, 219);
+            this.CtrlProfessorRankLabel.Location = new System.Drawing.Point(37, 178);
             this.CtrlProfessorRankLabel.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.CtrlProfessorRankLabel.Name = "CtrlProfessorRankLabel";
             this.CtrlProfessorRankLabel.Size = new System.Drawing.Size(29, 16);
@@ -53,10 +53,10 @@ namespace WindowsFormsApp1 {
             // 
             // ctrlRank
             // 
-            this.ctrlRank.Location = new System.Drawing.Point(166, 209);
+            this.ctrlRank.Location = new System.Drawing.Point(138, 168);
             this.ctrlRank.Margin = new System.Windows.Forms.Padding(5);
             this.ctrlRank.Name = "ctrlRank";
-            this.ctrlRank.Size = new System.Drawing.Size(192, 36);
+            this.ctrlRank.Size = new System.Drawing.Size(363, 36);
             this.ctrlRank.TabIndex = 28;
             // 
             // ctrlAge
@@ -66,7 +66,7 @@ namespace WindowsFormsApp1 {
             0,
             0,
             0});
-            this.ctrlAge.Location = new System.Drawing.Point(166, 165);
+            this.ctrlAge.Location = new System.Drawing.Point(138, 124);
             this.ctrlAge.Margin = new System.Windows.Forms.Padding(5);
             this.ctrlAge.Name = "ctrlAge";
             this.ctrlAge.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -83,12 +83,12 @@ namespace WindowsFormsApp1 {
             0,
             0,
             0});
-            this.ctrlAge.Size = new System.Drawing.Size(156, 24);
+            this.ctrlAge.Size = new System.Drawing.Size(363, 24);
             this.ctrlAge.TabIndex = 27;
             // 
             // CtrlProfessorAgeLabel
             // 
-            this.CtrlProfessorAgeLabel.Location = new System.Drawing.Point(65, 169);
+            this.CtrlProfessorAgeLabel.Location = new System.Drawing.Point(37, 128);
             this.CtrlProfessorAgeLabel.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.CtrlProfessorAgeLabel.Name = "CtrlProfessorAgeLabel";
             this.CtrlProfessorAgeLabel.Size = new System.Drawing.Size(22, 16);
@@ -97,7 +97,7 @@ namespace WindowsFormsApp1 {
             // 
             // CtrlProfessorNameLabel
             // 
-            this.CtrlProfessorNameLabel.Location = new System.Drawing.Point(68, 84);
+            this.CtrlProfessorNameLabel.Location = new System.Drawing.Point(40, 43);
             this.CtrlProfessorNameLabel.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.CtrlProfessorNameLabel.Name = "CtrlProfessorNameLabel";
             this.CtrlProfessorNameLabel.Size = new System.Drawing.Size(33, 16);
@@ -106,7 +106,7 @@ namespace WindowsFormsApp1 {
             // 
             // ctrlName
             // 
-            this.ctrlName.Location = new System.Drawing.Point(169, 81);
+            this.ctrlName.Location = new System.Drawing.Point(138, 40);
             this.ctrlName.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.ctrlName.Name = "ctrlName";
             this.ctrlName.Size = new System.Drawing.Size(363, 22);
@@ -114,7 +114,7 @@ namespace WindowsFormsApp1 {
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(579, 397);
+            this.simpleButton2.Location = new System.Drawing.Point(408, 381);
             this.simpleButton2.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(93, 30);
@@ -124,7 +124,7 @@ namespace WindowsFormsApp1 {
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(440, 397);
+            this.simpleButton1.Location = new System.Drawing.Point(297, 381);
             this.simpleButton1.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(93, 30);
@@ -134,14 +134,14 @@ namespace WindowsFormsApp1 {
             // 
             // ctrlCourses
             // 
-            this.ctrlCourses.Location = new System.Drawing.Point(169, 273);
+            this.ctrlCourses.Location = new System.Drawing.Point(138, 232);
             this.ctrlCourses.Name = "ctrlCourses";
-            this.ctrlCourses.Size = new System.Drawing.Size(189, 110);
+            this.ctrlCourses.Size = new System.Drawing.Size(363, 110);
             this.ctrlCourses.TabIndex = 32;
             // 
             // ctrlCoursesLabel
             // 
-            this.ctrlCoursesLabel.Location = new System.Drawing.Point(69, 277);
+            this.ctrlCoursesLabel.Location = new System.Drawing.Point(41, 236);
             this.ctrlCoursesLabel.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.ctrlCoursesLabel.Name = "ctrlCoursesLabel";
             this.ctrlCoursesLabel.Size = new System.Drawing.Size(46, 16);
@@ -150,7 +150,7 @@ namespace WindowsFormsApp1 {
             // 
             // ctrlSurnameLabel
             // 
-            this.ctrlSurnameLabel.Location = new System.Drawing.Point(68, 129);
+            this.ctrlSurnameLabel.Location = new System.Drawing.Point(40, 88);
             this.ctrlSurnameLabel.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.ctrlSurnameLabel.Name = "ctrlSurnameLabel";
             this.ctrlSurnameLabel.Size = new System.Drawing.Size(52, 16);
@@ -159,7 +159,7 @@ namespace WindowsFormsApp1 {
             // 
             // ctrlSurname
             // 
-            this.ctrlSurname.Location = new System.Drawing.Point(169, 126);
+            this.ctrlSurname.Location = new System.Drawing.Point(138, 85);
             this.ctrlSurname.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.ctrlSurname.Name = "ctrlSurname";
             this.ctrlSurname.Size = new System.Drawing.Size(363, 22);
@@ -167,9 +167,11 @@ namespace WindowsFormsApp1 {
             // 
             // ProfessorForm
             // 
+            this.Appearance.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 450);
+            this.ClientSize = new System.Drawing.Size(525, 437);
             this.Controls.Add(this.ctrlSurnameLabel);
             this.Controls.Add(this.ctrlSurname);
             this.Controls.Add(this.ctrlCoursesLabel);

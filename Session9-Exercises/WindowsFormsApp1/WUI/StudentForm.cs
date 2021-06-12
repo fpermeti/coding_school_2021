@@ -14,16 +14,17 @@ namespace WindowsFormsApp1 {
 
     public partial class StudentForm : DevExpress.XtraEditors.XtraForm {
 
-        public Student NewStudent { get; set; }
+        public Student NewStudent = null;
 
-        public List<Course> NewCourses { get; set; }
+        public University NewUniversity = null;
 
         public StudentForm() {
+
             InitializeComponent();
         }
 
-
         private void ctrlOK_Click(object sender, EventArgs e) {
+
             AddStudent();
         }
 
@@ -39,15 +40,11 @@ namespace WindowsFormsApp1 {
 
                 NewStudent.RegistrationNumber = Convert.ToInt32(ctrlRegistrationNumber.EditValue);
 
-                List<Course> newCourses = new List<Course>();
-
                 //populate list containing the courses a student attends
                 foreach (int i in ctrlCourses.CheckedIndices) {
 
-                    newCourses.Add(NewCourses[i]);
+                    NewStudent.Courses.Add(NewUniversity.Courses[i]); //= studentCourses;
                 }
-
-                NewStudent.Courses = newCourses;
 
                 DialogResult = DialogResult.OK;
 
@@ -61,12 +58,9 @@ namespace WindowsFormsApp1 {
 
         private void ctrlCancel_Click(object sender, EventArgs e) {
 
-
             DialogResult = DialogResult.Cancel;
 
             Close();
         }
-
-   
     }
 }

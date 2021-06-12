@@ -11,11 +11,10 @@ namespace WindowsFormsApp1.Impl {
         public int RegistrationNumber { get; set; }
         public List<Course> Courses { get; set; }
 
-        public Student() :base(){
+        public Student() : base() {
 
-            Courses = new List<Course>();  
+            Courses = new List<Course>();
         }
-
 
         public void Attend(Course course, DateTime dateTime) {
 
@@ -24,6 +23,5 @@ namespace WindowsFormsApp1.Impl {
         public void WriteExam(Course course, DateTime dateTime) {
 
         }
-
     }
 }

@@ -13,8 +13,7 @@ using WindowsFormsApp1.Impl;
 namespace WindowsFormsApp1 {
     public partial class CourseForm : DevExpress.XtraEditors.XtraForm {
 
-        public Course NewCourse { get; set; }
-
+        public Course NewCourse = null;
 
         public CourseForm() {
 
@@ -23,9 +22,7 @@ namespace WindowsFormsApp1 {
 
         private void AddCourse() {
 
-
             if (Convert.ToString(ctrlCode.EditValue).Length > 0 && Convert.ToString(ctrlSubject.EditValue).Length > 0) {
-
 
                 NewCourse.Code = Convert.ToString(ctrlCode.EditValue);
 

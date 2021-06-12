@@ -19,7 +19,6 @@ namespace WindowsFormsApp1.Impl {
 
         public Course()
             : base() {
-
         }
     }
 }

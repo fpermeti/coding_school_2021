@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace WindowsFormsApp1.Impl {
 
     public enum CourseCategory {
+
         Physics,
         Mathematics,
         Sociology,
@@ -22,6 +23,4 @@ namespace WindowsFormsApp1.Impl {
         Associate,
         Assistant
     }
-
-
-}
+    }

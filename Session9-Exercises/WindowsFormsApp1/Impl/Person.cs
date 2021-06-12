@@ -9,13 +9,12 @@ namespace WindowsFormsApp1.Impl {
 
     public class Person : Entity {
 
-        public virtual string Name { get; set; }
+        public string Name { get; set; }
         public string Surname { get; set; }
         public int Age { get; set; }
 
-        public Person(): base() {
+        public Person() : base() {
 
         }
-
     }
 }

@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1 {
 
-
     public class Crud {
-
 
         public void Create() {
 
@@ -26,5 +24,4 @@ namespace WindowsFormsApp1 {
 
         }
     }
-
 }

@@ -30,7 +30,6 @@ namespace WindowsFormsApp1 {
             this.ctrlAddStudent = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.ctrlStudentList = new DevExpress.XtraEditors.ListBoxControl();
-            this.ctrlSerialize = new System.Windows.Forms.Button();
             this.ctrlCourseList = new DevExpress.XtraEditors.ListBoxControl();
             this.ctrlProfessorList = new DevExpress.XtraEditors.ListBoxControl();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlStudentList)).BeginInit();
@@ -101,17 +100,6 @@ namespace WindowsFormsApp1 {
             this.ctrlStudentList.Size = new System.Drawing.Size(944, 194);
             this.ctrlStudentList.TabIndex = 10;
             // 
-            // ctrlSerialize
-            // 
-            this.ctrlSerialize.Location = new System.Drawing.Point(796, 659);
-            this.ctrlSerialize.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ctrlSerialize.Name = "ctrlSerialize";
-            this.ctrlSerialize.Size = new System.Drawing.Size(167, 39);
-            this.ctrlSerialize.TabIndex = 13;
-            this.ctrlSerialize.Text = "Serialize to Json";
-            this.ctrlSerialize.UseVisualStyleBackColor = true;
-            this.ctrlSerialize.Click += new System.EventHandler(this.ctrlSerialize_Click);
-            // 
             // ctrlCourseList
             // 
             this.ctrlCourseList.Location = new System.Drawing.Point(201, 88);
@@ -137,7 +125,6 @@ namespace WindowsFormsApp1 {
             this.ClientSize = new System.Drawing.Size(1167, 720);
             this.Controls.Add(this.ctrlProfessorList);
             this.Controls.Add(this.ctrlCourseList);
-            this.Controls.Add(this.ctrlSerialize);
             this.Controls.Add(this.ctrlStudentList);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.ctrlAddStudent);
@@ -165,7 +152,6 @@ namespace WindowsFormsApp1 {
         private System.Windows.Forms.Button ctrlAddStudent;
         private System.Windows.Forms.Button button5;
         private DevExpress.XtraEditors.ListBoxControl ctrlStudentList;
-        private System.Windows.Forms.Button ctrlSerialize;
         private DevExpress.XtraEditors.ListBoxControl ctrlCourseList;
         private DevExpress.XtraEditors.ListBoxControl ctrlProfessorList;
     }

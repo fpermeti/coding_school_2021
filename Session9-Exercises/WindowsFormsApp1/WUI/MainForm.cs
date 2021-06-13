@@ -29,7 +29,6 @@ namespace WindowsFormsApp1 {
             InitializeComponent();
         }
 
-        //as soon as form loads an University object is created
         private void MainForm_Load(object sender, EventArgs e) {
 
             RetrieveObjectFromJson();
@@ -37,18 +36,14 @@ namespace WindowsFormsApp1 {
 
         private void RetrieveObjectFromJson() {
 
-            CodingSchool = new University() {
-
-                Professors = new List<Professor>(),
-                Students = new List<Student>(),
-                Courses = new List<Course>()
-            };
-
+            //the program attempts to deserialize object from json file
+            //if the file does not exist, then it creates an empty file
+            //and serializes an empty object to the json file
             DeserializeFromJson();
 
-            RefreshStudentList();
-
             RefreshCourseList();
+
+            RefreshStudentList();
 
             RefreshProfessorList();
         }
@@ -65,8 +60,13 @@ namespace WindowsFormsApp1 {
             DialogResult result = courseForm.ShowDialog();
 
             switch (result) {
+
                 case DialogResult.OK:
+
                     CodingSchool.Courses.Add(courseForm.NewCourse);
+
+                    SerializeToJson(CodingSchool);
+
                     break;
                 default:
                     break;
@@ -93,8 +93,13 @@ namespace WindowsFormsApp1 {
             DialogResult result = studentForm.ShowDialog();
 
             switch (result) {
+
                 case DialogResult.OK:
+
                     CodingSchool.Students.Add(studentForm.NewStudent);
+
+                    SerializeToJson(CodingSchool);
+
                     break;
                 default:
                     break;
@@ -121,8 +126,13 @@ namespace WindowsFormsApp1 {
             DialogResult result = professorForm.ShowDialog();
 
             switch (result) {
+
                 case DialogResult.OK:
+
                     CodingSchool.Professors.Add(professorForm.NewProfessor);
+
+                    SerializeToJson(CodingSchool);
+
                     break;
                 default:
                     break;
@@ -131,68 +141,50 @@ namespace WindowsFormsApp1 {
 
         private void RefreshCourseList() {
 
-            if (CodingSchool != null) {
+            ctrlCourseList.Items.Clear();
 
-                ctrlCourseList.Items.Clear();
+            foreach (Course course in CodingSchool.Courses) {
 
-                foreach (Course course in CodingSchool.Courses) {
-
-                    ctrlCourseList.Items.Add(string.Format("{0} \t {1} \t {2} \t {3}", course.Code, course.Subject, course.Hours, course.Category));
-                }
-
+                ctrlCourseList.Items.Add(string.Format("{0} \t {1} \t {2} \t {3}", course.Code, course.Subject, course.Hours, course.Category));
             }
-
-
         }
 
         private void RefreshStudentList() {
 
-            if (CodingSchool != null) {
+            ctrlStudentList.Items.Clear();
 
+            string studentCoursesCodes = string.Empty;
 
-                ctrlStudentList.Items.Clear();
+            foreach (Student student in CodingSchool.Students) {
 
-                string studentCoursesCodes = string.Empty;
+                foreach (Course course in student.Courses) {
 
-                foreach (Student student in CodingSchool.Students) {
-
-                    foreach (Course course in student.Courses) {
-
-                        studentCoursesCodes += string.Format("- {0} -", course.Code);
-                    }
-
-                    ctrlStudentList.Items.Add(string.Format("{0} \t {1} \t {2} \t {3} \t {4}", student.Name, student.Surname, student.Age, student.RegistrationNumber, studentCoursesCodes));
-
-                    studentCoursesCodes = string.Empty;
+                    studentCoursesCodes += string.Format("- {0} -", course.Code);
                 }
+
+                ctrlStudentList.Items.Add(string.Format("{0} \t {1} \t {2} \t {3} \t {4}", student.Name, student.Surname, student.Age, student.RegistrationNumber, studentCoursesCodes));
+
+                studentCoursesCodes = string.Empty;
             }
-
-
         }
 
         private void RefreshProfessorList() {
 
-            if (CodingSchool != null) {
+            ctrlProfessorList.Items.Clear();
 
+            string professorCoursesCodes = string.Empty;
 
-                ctrlProfessorList.Items.Clear();
+            foreach (Professor professor in CodingSchool.Professors) {
 
-                string professorCoursesCodes = string.Empty;
+                foreach (Course course in professor.Courses) {
 
-                foreach (Professor professor in CodingSchool.Professors) {
-
-                    foreach (Course course in professor.Courses) {
-
-                        professorCoursesCodes = professorCoursesCodes + string.Format("- {0} -", course.Code);
-                    }
-
-                    ctrlProfessorList.Items.Add(string.Format("{0} \t {1} \t {2} \t {3} \t {4}", professor.Name, professor.Surname, professor.Age, professor.Rank, professorCoursesCodes));
-
-                    professorCoursesCodes = string.Empty;
+                    professorCoursesCodes = professorCoursesCodes + string.Format("- {0} -", course.Code);
                 }
 
-            }
+                ctrlProfessorList.Items.Add(string.Format("{0} \t {1} \t {2} \t {3} \t {4}", professor.Name, professor.Surname, professor.Age, professor.Rank, professorCoursesCodes));
 
+                professorCoursesCodes = string.Empty;
+            }
         }
 
         private void ctrlSerialize_Click(object sender, EventArgs e) {
@@ -209,38 +201,41 @@ namespace WindowsFormsApp1 {
             string path = Path.Combine(Environment.CurrentDirectory, _JsonFile);
 
             File.WriteAllText(path, data);
-
-            if (CodingSchool != null) {
-
-                MessageBox.Show("Object serialized.");
-            }
         }
 
         private void DeserializeFromJson() {
 
             JavaScriptSerializer serializer = new JavaScriptSerializer();
 
-            string path = string.Empty;
+            string path = Path.Combine(Environment.CurrentDirectory, _JsonFile);
 
             string data = string.Empty;
 
             try {
-                path = Path.Combine(Environment.CurrentDirectory, _JsonFile);
+
                 data = File.ReadAllText(path);
+
+                CodingSchool = serializer.Deserialize<University>(data);
             }
             catch (Exception) {
 
-                File.Create(_JsonFile).Dispose();
+                File.Create(path).Dispose();
 
-                path = Path.Combine(Environment.CurrentDirectory, _JsonFile);
+                CodingSchool = new University() {
 
-                data = File.ReadAllText(path);
-
+                    Professors = new List<Professor>(),
+                    Students = new List<Student>(),
+                    Courses = new List<Course>()
+                };
 
                 SerializeToJson(CodingSchool);
-            }
 
-            CodingSchool = serializer.Deserialize<University>(data);
+                //CodingSchool = null;
+
+                //data = File.ReadAllText(path);
+
+                //CodingSchool = serializer.Deserialize<University>(data);
+            }
         }
 
         private void ctrlAddCourse_Click(object sender, EventArgs e) {

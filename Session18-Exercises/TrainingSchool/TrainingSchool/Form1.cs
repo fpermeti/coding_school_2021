@@ -132,7 +132,7 @@ namespace TrainingSchool
 
         private void button7_Click(object sender, EventArgs e)
         {
-            var course = bindingSource1.Current as Course;
+            var course = bindingSource2.Current as Course;
             if (course is null)
                 return;
 

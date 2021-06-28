@@ -9,19 +9,19 @@ namespace TrainingSchool.Model
 {
     public class Student : EntityBase
     {
-        [Required]
-        [MaxLength(50)]
+        //[Required]
+        //[MaxLength(50)]
         public string Name { get; set; }
 
-        [Required]
-        [MaxLength(150)]
+        //[Required]
+        //[MaxLength(150)]
         public string Surname { get; set; }
 
-        [Required]
+        //[Required]
         public DateTime BirthDate { get; set; }
 
-        [Required]
-        [MaxLength(200)]
+        //[Required]
+        //[MaxLength(200)]
         public string Address { get; set; }
 
     }

@@ -9,7 +9,7 @@ using TrainingSchool.Model;
 
 namespace TrainingSchool.EF.Context
 {
-    class TrainingSchoolContext : DbContext
+   public class TrainingSchoolContext : DbContext
     {
 
 

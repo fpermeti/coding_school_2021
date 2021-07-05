@@ -24,5 +24,8 @@ namespace TrainingSchool.Model
         //[MaxLength(200)]
         public string Address { get; set; }
 
+
+        public ICollection<StudentCourse> StudentCourses { get; set; }
+
     }
 }

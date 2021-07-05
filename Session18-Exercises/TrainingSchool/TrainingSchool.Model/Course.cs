@@ -24,5 +24,9 @@ namespace TrainingSchool.Model
         //[Range(1, 50, ErrorMessage = "Valid range between 1 and 50")]
         public int Duration { get; set; }
 
+
+        public ICollection<StudentCourse> StudentCourses { get; set; }
+
+
     }
 }

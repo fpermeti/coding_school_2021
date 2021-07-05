@@ -7,16 +7,6 @@ using System.Threading.Tasks;
 namespace MyClassLibrary {
     public class FibonacciCalculator : IFibonacciCalculator {
 
-
-
-        //public long N { get; set; }
-
-
-        //public FibonacciCalculator(long n) {
-        //    N = n;
-        //}
-
-
         public long FibonacciSeries(long n) {
 
             if (n < 0) {

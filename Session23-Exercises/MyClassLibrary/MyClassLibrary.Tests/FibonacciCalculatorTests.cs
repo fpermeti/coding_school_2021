@@ -33,7 +33,6 @@ namespace MyClassLibrary.Tests {
             //Arrange
             var sut = CreateDefaultSUT();
             var n = 0;
-           
             var expected = 0;
 
             //Act
@@ -49,7 +48,6 @@ namespace MyClassLibrary.Tests {
             //Arrange
             var sut = CreateDefaultSUT();
             var n = 1;
-
             var expected = 1;
 
             //Act
@@ -65,7 +63,6 @@ namespace MyClassLibrary.Tests {
             //Arrange
             var sut = CreateDefaultSUT();
             var n = 8;
-
             var expected = 21;
 
             //Act
@@ -87,13 +84,6 @@ namespace MyClassLibrary.Tests {
                 var actual = sut.FibonacciSeries(n);
             });
         }
-
-
-
-
-
-
-
 
 
     }

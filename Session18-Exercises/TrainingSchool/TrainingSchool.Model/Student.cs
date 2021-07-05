@@ -27,5 +27,11 @@ namespace TrainingSchool.Model
 
         public ICollection<StudentCourse> StudentCourses { get; set; }
 
+
+        public Student() {
+            BirthDate = new DateTime(1990, 1, 1);
+
+        }
+
     }
 }

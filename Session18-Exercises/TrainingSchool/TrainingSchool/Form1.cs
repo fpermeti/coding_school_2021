@@ -30,11 +30,12 @@ namespace TrainingSchool
 
             bindingSource1.DataSource = typeof(Student);
 
+
             dataGridView1.AutoGenerateColumns = false;
 
             dataGridView1.Columns.Add(new DataGridViewTextBoxColumn() { DataPropertyName = "Name", HeaderText = "Name" });
             dataGridView1.Columns.Add(new DataGridViewTextBoxColumn() { DataPropertyName = "Surname", HeaderText = "Surname" });
-         //   dataGridView1.Columns.Add(new DataGridViewTextBoxColumn() { DataPropertyName = "BirthDate", HeaderText = "BirthDate" });
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn() { DataPropertyName = "BirthDate", HeaderText = "BirthDate" });
             dataGridView1.Columns.Add(new DataGridViewTextBoxColumn() { DataPropertyName = "Address", HeaderText = "Address" });
 
 
@@ -43,7 +44,7 @@ namespace TrainingSchool
 
             textBox1.DataBindings.Add("Text", bindingSource1, "Name");
             textBox2.DataBindings.Add("Text", bindingSource1, "Surname");
-           // dateTimePicker1.DataBindings.Add("Value", bindingSource1, "BirthDate");
+            dateTimePicker1.DataBindings.Add("Text", bindingSource1, "BirthDate");
             textBox3.DataBindings.Add("Text", bindingSource1, "Address");
 
 
@@ -55,7 +56,7 @@ namespace TrainingSchool
 
             dataGridView2.Columns.Add(new DataGridViewTextBoxColumn() { DataPropertyName = "Title", HeaderText = "Title" });
             dataGridView2.Columns.Add(new DataGridViewTextBoxColumn() { DataPropertyName = "Category", HeaderText = "Category" });
-       //     dataGridView2.Columns.Add(new DataGridViewTextBoxColumn() { DataPropertyName = "Date", HeaderText = "Date" });
+            dataGridView2.Columns.Add(new DataGridViewTextBoxColumn() { DataPropertyName = "Date", HeaderText = "Date" });
             dataGridView2.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Duration", HeaderText = "Duration" });
 
 
@@ -64,7 +65,7 @@ namespace TrainingSchool
 
             textBox6.DataBindings.Add("Text", bindingSource2, "Title");
             textBox5.DataBindings.Add("Text", bindingSource2, "Category");
-          //  dateTimePicker2.DataBindings.Add("Value", bindingSource2, "Date");
+            dateTimePicker2.DataBindings.Add("Text", bindingSource2, "Date");
             numericUpDown1.DataBindings.Add("Value", bindingSource2, "Duration");
 
 
@@ -72,14 +73,6 @@ namespace TrainingSchool
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-
-
-
-
-
-
-
 
             var optionsBuilder = new DbContextOptionsBuilder<TrainingSchoolContext>();
             optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DBTrainingSchool;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");

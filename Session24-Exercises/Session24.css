@@ -1,0 +1,30 @@
+
+.greyBackGround{
+    background-color: rgb(202, 199, 199);
+}
+
+.tables{
+    width: 1000px;
+}
+
+div{
+    border-style: solid; 
+    border-color: rgb(219, 211, 211);
+    width: 1000px;
+}
+
+#div1{
+    background-color: rgb(219, 211, 211);
+}
+
+.userInteraction{
+    width: 250px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.dropDown{
+    width: 264px;
+    padding: 5px;
+    margin: 5px;
+}

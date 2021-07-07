@@ -31,9 +31,21 @@ namespace Session25.Pages
         }
 
         public IActionResult OnPost() {
-            _storage.AddCustomer(SelectedCustomer);
 
-            return RedirectToPage("List");
+            if (ModelState.IsValid) {
+
+                SelectedCustomer.Name= SelectedCustomer.Name.Trim();
+                SelectedCustomer.Surname= SelectedCustomer.Surname.Trim();
+                SelectedCustomer.AFM= SelectedCustomer.AFM.Trim();
+
+                _storage.AddCustomer(SelectedCustomer);
+
+                return RedirectToPage("List");
+
+
+            }
+
+            return Page();
         }
 
         public IActionResult OnPostCancel() {

@@ -7,46 +7,124 @@
 
 <div>
     <form id="frmMain" method="post">
-        <input id="txtSelectedId" type="hidden" value="@Model.SelectedCustomer.Id">
-        
-        
-        <table>
-            <tr>
-                <td><label for="txtName">Name</label></td>
-                <td><input id="txtName" type="text" name="name" value="@Model.SelectedCustomer.Name"></td>
-            </tr>
-            <tr>
-                <td><label for="txtSurname">Surname</label></td>
-                <td><input id="txtSurname" type="text" name="surname" value="@Model.SelectedCustomer.Surname"></td>
-            </tr>
-            <tr>
-                <td><label for="txtAfm">AFM</label></td>
-                <td><input id="txtAfm" type="text" name="afm" value="@Model.SelectedCustomer.AFM"></td>
-            </tr>
 
-            <tr>
-                <td><label for="chkActive">Active</label></td>
-                <td><input id="chkActive" type="checkbox" name="active" value="@Model.SelectedCustomer.Active"></td>
-            </tr>
+        @Html.HiddenFor(x => x.SelectedCustomer.Id)
+
+        <div style="display:flex;padding:5px;flex-direction:row">
+            <div>
 
 
+                @Html.LabelFor(x => x.SelectedCustomer.Name)
 
-            <tr>
-                <td colspan="2">
-                    <div style="display: flex">
-                        <button class="btn btn-warning" asp-page-handler="cancel">Cancel</button>
 
-                        @if (Model.SelectedCustomer.Id != Guid.Empty) {
+            </div>
 
-                                <button class="btn btn-danger" asp-page-handler="delete">Delete</button>
-                         }
+            <div style="margin-left:25px">
 
-                        <button class="btn btn-success" type="submit">Save</button>
-                    </div>
-                </td>
-            </tr>
-        </table>
+                @Html.EditorFor(x => x.SelectedCustomer.Name)
 
+            </div>
+
+            <div style="margin-left:25px">
+
+                @Html.ValidationMessageFor(x => x.SelectedCustomer.Name, "", new { @class = "text-danger" })
+
+            </div>
+
+        </div>
+
+        <div style="display:flex;padding:5px;flex-direction:row">
+            <div>
+
+
+                @Html.LabelFor(x => x.SelectedCustomer.Surname)
+
+
+            </div>
+
+            <div style="margin-left:25px">
+
+                @Html.EditorFor(x => x.SelectedCustomer.Surname)
+
+            </div>
+
+            <div style="margin-left:25px">
+
+                @Html.ValidationMessageFor(x => x.SelectedCustomer.Surname, "", new { @class = "text-danger" })
+
+            </div>
+
+        </div>
+
+
+        <div style="display:flex;padding:5px;flex-direction:row">
+            <div>
+
+
+                @Html.LabelFor(x => x.SelectedCustomer.AFM)
+
+
+            </div>
+
+            <div style="margin-left:25px">
+
+                @Html.EditorFor(x => x.SelectedCustomer.AFM)
+
+            </div>
+
+            <div style="margin-left:25px">
+
+                @Html.ValidationMessageFor(x => x.SelectedCustomer.AFM, "", new { @class = "text-danger" })
+
+            </div>
+
+        </div>
+
+
+
+        <div style="display:flex;padding:5px;flex-direction:row">
+            <div>
+
+
+                @Html.LabelFor(x => x.SelectedCustomer.Active)
+
+
+            </div>
+
+            <div style="margin-left:25px">
+
+                @Html.CheckBoxFor(x => x.SelectedCustomer.Active)
+
+            </div>
+
+
+        </div>
+
+
+        <div style="display:flex;padding:5px;flex-direction:row">
+            <div>
+
+
+                <button class="btn btn-warning" asp-page-handler="cancel">Cancel</button>
+
+
+            </div>
+
+            <div style="margin-left:25px">
+
+                @if (Model.SelectedCustomer.Id != Guid.Empty) {
+
+                    <button class="btn btn-danger" asp-page-handler="delete">Delete</button>
+                }
+            </div>
+
+            <div style="margin-left:25px">
+
+                <button class="btn btn-success" type="submit">Save</button>
+
+            </div>
+
+        </div>
 
 
     </form>

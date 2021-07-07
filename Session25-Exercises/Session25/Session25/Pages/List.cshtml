@@ -1,0 +1,21 @@
+﻿@page
+@model Session25.Pages.ListModel
+@{
+}
+
+
+
+<a href="/Edit/0">Add New Customer</a>
+
+<ul id="lstList">
+
+    @foreach (var item in Model.Customers) {
+
+            <li>@item.Name</li>
+            
+    }
+
+</ul>
+
+
+

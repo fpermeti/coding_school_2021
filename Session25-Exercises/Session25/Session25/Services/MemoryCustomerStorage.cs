@@ -27,15 +27,15 @@ namespace Session25.Services {
                 return;
             }
 
-            var selectedItem = GetCustomerById(customer.Id);
+            var selectedCustomer = GetCustomerById(customer.Id);
 
-            selectedItem.Name = customer.Name;
+            selectedCustomer.Name = customer.Name;
 
-            selectedItem.Surname = customer.Surname;
+            selectedCustomer.Surname = customer.Surname;
 
-            selectedItem.AFM = customer.AFM;
+            selectedCustomer.AFM = customer.AFM;
 
-            selectedItem.Active = customer.Active;
+            selectedCustomer.Active = customer.Active;
 
         }
 
@@ -53,11 +53,11 @@ namespace Session25.Services {
 
         public void RemoveCustomer(Guid id) {
 
-            var selectedItem = GetCustomerById(id);
-            if (selectedItem == null)
+            var selectedCustomer = GetCustomerById(id);
+            if (selectedCustomer == null)
                 throw new Exception(string.Format("Customer with id '{0}' was not found.", id));
 
-            innerList.Remove(selectedItem);
+            innerList.Remove(selectedCustomer);
 
 
         }

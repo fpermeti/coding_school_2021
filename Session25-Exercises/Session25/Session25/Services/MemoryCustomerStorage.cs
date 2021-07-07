@@ -55,7 +55,7 @@ namespace Session25.Services {
 
             var selectedItem = GetCustomerById(id);
             if (selectedItem == null)
-                throw new Exception(string.Format("Item with id '{0}' was not found.", id));
+                throw new Exception(string.Format("Customer with id '{0}' was not found.", id));
 
             innerList.Remove(selectedItem);
 

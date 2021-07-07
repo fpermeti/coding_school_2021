@@ -36,7 +36,7 @@
                     <div style="display: flex">
                         <button class="btn btn-warning" asp-page-handler="cancel">Cancel</button>
 
-                        @if (Model.SelectedCustomer.Id > 0) {
+                        @if (Model.SelectedCustomer.Id != Guid.Empty) {
 
                                 <button class="btn btn-danger" asp-page-handler="delete">Delete</button>
                          }

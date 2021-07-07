@@ -20,11 +20,15 @@ namespace Session25.Services {
 
         public void AddCustomer(Customer customer) {
 
-            if (customer.Id == 0) {
-                customer.Id = innerList.Count + 1;
+            if (customer.Id == Guid.Empty) {
+
+                customer.Id = Guid.NewGuid();
                 innerList.Add(customer);
                 return;
             }
+
+
+
 
             var selectedItem = GetCustomerById(customer.Id);
 
@@ -44,14 +48,14 @@ namespace Session25.Services {
 
         }
 
-        public Customer GetCustomerById(int id) {
+        public Customer GetCustomerById(Guid id) {
 
             return innerList.FirstOrDefault(customer => customer.Id == id);
 
 
         }
 
-        public void RemoveCustomer(int id) {
+        public void RemoveCustomer(Guid id) {
 
             var selectedItem = GetCustomerById(id);
             if (selectedItem == null)

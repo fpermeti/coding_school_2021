@@ -9,9 +9,9 @@ namespace Session25.Services {
 
 
         public void AddCustomer(Customer customer);
-        public void RemoveCustomer(int id);
+        public void RemoveCustomer(Guid id);
         public List<Customer> GetAllCustomers();
-        public Customer GetCustomerById(int id);
+        public Customer GetCustomerById(Guid id);
 
 
     }

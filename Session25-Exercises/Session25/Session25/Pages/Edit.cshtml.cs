@@ -21,8 +21,8 @@ namespace Session25.Pages
             _storage = storage;
         }
 
-        public void OnGet(int id) {
-            if (id == 0) {
+        public void OnGet(Guid id) {
+            if (id == Guid.Empty) {
                 SelectedCustomer = new Customer();
                 return;
             }

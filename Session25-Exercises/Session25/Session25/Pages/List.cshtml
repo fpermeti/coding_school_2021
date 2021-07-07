@@ -11,11 +11,40 @@
 
     @foreach (var item in Model.Customers) {
 
-            <li>@item.Name</li>
-            
+        <li>@item.Name</li>
+
     }
 
 </ul>
 
 
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>AFM</th>
+            <th>Active</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.Customers) {
+
+            <tr>
+
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Surname</td>
+                <td>@item.AFM</td>
+                <td>@item.Active</td>
+
+                <td><a href="Edit/@item.Id">Edit</a></td>
+            </tr>
+            
+         }
+
+    </tbody>
+</table>
 

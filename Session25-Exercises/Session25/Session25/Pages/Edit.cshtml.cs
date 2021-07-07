@@ -7,13 +7,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Session25.Model;
 using Session25.Services;
 
-namespace Session25.Pages.Shared
+namespace Session25.Pages
 {
     public class EditModel : PageModel
     {
 
         [BindProperty]
-        public Customer SelectedListItem { get; set; }
+        public Customer SelectedCustomer { get; set; }
 
         private ICustomerStorage _storage;
 
@@ -23,15 +23,15 @@ namespace Session25.Pages.Shared
 
         public void OnGet(int id) {
             if (id == 0) {
-                SelectedListItem = new Customer();
+                SelectedCustomer = new Customer();
                 return;
             }
 
-            SelectedListItem = _storage.GetCustomerById(id);
+            SelectedCustomer = _storage.GetCustomerById(id);
         }
 
         public IActionResult OnPost() {
-            _storage.AddCustomer(SelectedListItem);
+            _storage.AddCustomer(SelectedCustomer);
 
             return RedirectToPage("List");
         }
@@ -41,7 +41,7 @@ namespace Session25.Pages.Shared
         }
 
         public IActionResult OnPostDelete() {
-            _storage.RemoveCustomer(SelectedListItem.Id);
+            _storage.RemoveCustomer(SelectedCustomer.Id);
             return RedirectToPage("List");
         }
 

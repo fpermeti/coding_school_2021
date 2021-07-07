@@ -10,7 +10,7 @@
 
         @Html.HiddenFor(x => x.SelectedCustomer.Id)
 
-        <div style="display:flex;padding:5px;flex-direction:row">
+        <div class="rowDivs">
             <div>
 
 
@@ -19,13 +19,13 @@
 
             </div>
 
-            <div style="margin-left:25px">
+            <div class="columnDivs">
 
                 @Html.EditorFor(x => x.SelectedCustomer.Name)
 
             </div>
 
-            <div style="margin-left:25px">
+            <div class="columnDivs">
 
                 @Html.ValidationMessageFor(x => x.SelectedCustomer.Name, "", new { @class = "text-danger" })
 
@@ -33,7 +33,7 @@
 
         </div>
 
-        <div style="display:flex;padding:5px;flex-direction:row">
+        <div class="rowDivs">
             <div>
 
 
@@ -42,13 +42,13 @@
 
             </div>
 
-            <div style="margin-left:25px">
+            <div class="columnDivs">
 
                 @Html.EditorFor(x => x.SelectedCustomer.Surname)
 
             </div>
 
-            <div style="margin-left:25px">
+            <div class="columnDivs">
 
                 @Html.ValidationMessageFor(x => x.SelectedCustomer.Surname, "", new { @class = "text-danger" })
 
@@ -57,7 +57,7 @@
         </div>
 
 
-        <div style="display:flex;padding:5px;flex-direction:row">
+        <div class="rowDivs">
             <div>
 
 
@@ -66,13 +66,13 @@
 
             </div>
 
-            <div style="margin-left:25px">
+            <div class="columnDivs">
 
                 @Html.EditorFor(x => x.SelectedCustomer.AFM)
 
             </div>
 
-            <div style="margin-left:25px">
+            <div class="columnDivs">
 
                 @Html.ValidationMessageFor(x => x.SelectedCustomer.AFM, "", new { @class = "text-danger" })
 
@@ -82,7 +82,7 @@
 
 
 
-        <div style="display:flex;padding:5px;flex-direction:row">
+        <div class="rowDivs">
             <div>
 
 
@@ -91,7 +91,7 @@
 
             </div>
 
-            <div style="margin-left:25px">
+            <div class="columnDivs">
 
                 @Html.CheckBoxFor(x => x.SelectedCustomer.Active)
 
@@ -101,7 +101,7 @@
         </div>
 
 
-        <div style="display:flex;padding:5px;flex-direction:row">
+        <div class="rowDivs">
             <div>
 
 
@@ -110,7 +110,7 @@
 
             </div>
 
-            <div style="margin-left:25px">
+            <div class="columnDivs">
 
                 @if (Model.SelectedCustomer.Id != Guid.Empty) {
 
@@ -118,7 +118,7 @@
                 }
             </div>
 
-            <div style="margin-left:25px">
+            <div class="columnDivs">
 
                 <button class="btn btn-success" type="submit">Save</button>
 

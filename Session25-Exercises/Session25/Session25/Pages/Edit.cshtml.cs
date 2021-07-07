@@ -7,10 +7,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Session25.Model;
 using Session25.Services;
 
-namespace Session25.Pages
-{
-    public class EditModel : PageModel
-    {
+namespace Session25.Pages {
+    public class EditModel : PageModel {
 
         [BindProperty]
         public Customer SelectedCustomer { get; set; }
@@ -34,9 +32,9 @@ namespace Session25.Pages
 
             if (ModelState.IsValid) {
 
-                SelectedCustomer.Name= SelectedCustomer.Name.Trim();
-                SelectedCustomer.Surname= SelectedCustomer.Surname.Trim();
-                SelectedCustomer.AFM= SelectedCustomer.AFM.Trim();
+                SelectedCustomer.Name = SelectedCustomer.Name.Trim();
+                SelectedCustomer.Surname = SelectedCustomer.Surname.Trim();
+                SelectedCustomer.AFM = SelectedCustomer.AFM.Trim();
 
                 _storage.AddCustomer(SelectedCustomer);
 

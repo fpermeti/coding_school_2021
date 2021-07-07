@@ -1,6 +1,14 @@
 ﻿
 table, th, td {
     border: 1px solid black;
-    margin:5px;
-    padding:5px;
+}
+
+.rowDivs {
+    display: flex;
+    padding: 5px;
+    flex-direction: row;
+}
+
+.columnDivs {
+    margin-left: 25px;
 }

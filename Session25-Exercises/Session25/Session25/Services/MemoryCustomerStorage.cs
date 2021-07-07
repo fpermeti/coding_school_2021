@@ -27,9 +27,6 @@ namespace Session25.Services {
                 return;
             }
 
-
-
-
             var selectedItem = GetCustomerById(customer.Id);
 
             selectedItem.Name = customer.Name;
@@ -51,7 +48,6 @@ namespace Session25.Services {
         public Customer GetCustomerById(Guid id) {
 
             return innerList.FirstOrDefault(customer => customer.Id == id);
-
 
         }
 

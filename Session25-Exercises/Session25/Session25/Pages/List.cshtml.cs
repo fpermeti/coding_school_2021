@@ -7,10 +7,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Session25.Model;
 using Session25.Services;
 
-namespace Session25.Pages
-{
-    public class ListModel : PageModel
-    {
+namespace Session25.Pages {
+    public class ListModel : PageModel {
 
         public List<Customer> Customers = new List<Customer>();
 

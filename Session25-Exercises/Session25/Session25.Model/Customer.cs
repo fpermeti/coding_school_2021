@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations;
 namespace Session25.Model {
     public class Customer {
 
-
         public Guid Id { get; set; }
 
         [Required(AllowEmptyStrings = false)]
